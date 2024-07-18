@@ -7,14 +7,10 @@ public class DayOfWeekPrinter {
 
         Total days in a non-leap year
         int totalDays = 365;
-
-        // Print the day of the week for each day of the year
-        for (int day = 1; day <= totalDays; day++) {
-            // Determine the day of the week using modulo operation
+        for (int day = 1; day <= totalDays; day++) 
+{
             int dayOfWeekIndex = (day - 1) % 7;
             String dayOfWeek = daysOfWeek[dayOfWeekIndex];
-
-            // Print the day of the week for the current day
             System.out.println("Day " + day + ": " + dayOfWeek);
         }
     }
