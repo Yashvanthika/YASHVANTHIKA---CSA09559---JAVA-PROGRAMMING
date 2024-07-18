@@ -1,10 +1,11 @@
 public class DayOfWeekPrinter {
 
-    public static void main(String[] args) {
-        // Define an array of days in a week
+    public static void main(String[] args)
+{
+         Define an array of days in a week
         String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-        // Total days in a non-leap year
+        Total days in a non-leap year
         int totalDays = 365;
 
         // Print the day of the week for each day of the year
