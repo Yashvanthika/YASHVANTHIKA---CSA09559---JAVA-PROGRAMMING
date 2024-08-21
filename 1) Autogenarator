@@ -1,0 +1,88 @@
+package Employee;
+import java.util.Scanner;
+public class Employee 
+{
+    private final String name;
+    private final String username;
+    private final String email;
+    private String password;
+    
+    public Employee() 
+    {
+        name = setName();
+        username = setUserName(name);
+        email = setEmail(username);
+        password = setPassword(username);
+    }
+    public String toString() 
+    {
+        return "Employee Details\n" +
+                "Name : " + name + "\n" +
+                "Username : " + username + "\n" +
+                "Email : " + email + "\n" +
+                "Initial Password : " + password;
+    }
+    private int countChars(String str, char ch) 
+    {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) 
+        {
+            if (str.charAt(i) == ch) 
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    private String setName() 
+    {
+        Scanner scanner = new Scanner(System.in);
+        String name;
+        int count;
+        do
+        {
+            System.out.println("Enter your full name (first and last name separated by a space):");
+            name = scanner.nextLine();
+            count = countChars(name, ' ');
+        }
+        while (count != 1);
+        return name;
+    }
+    private String setUserName(String name) 
+    {
+        return name.toLowerCase().replace(" ", ".");
+    }
+    private String setEmail(String username) 
+    {
+        return username.charAt(0) + username.substring(username.indexOf('.') + 1) + "@oracleacademy.Test";
+    }
+    private String setPassword(String username) 
+    {
+        String password = username.replaceAll("[aeiou]", "*");
+        if (password.length() < 8) 
+        {
+            while (password.length() < 8) 
+            {
+                password += "*";
+            }
+        } 
+        else if (password.length() > 8) 
+        {
+            password = password.substring(0, 8);
+        }
+        for (int i = 0; i < password.length(); i++) 
+        {
+            if (Character.isLetter(password.charAt(i))) 
+            {
+                password = password.substring(0, i) + Character.toUpperCase(password.charAt(i)) + password.substring(i + 1);
+                break;
+            }
+        }
+        return password;
+    }
+    public static void main(String[] args) 
+    {
+        Employee employee = new Employee();
+        System.out.println(employee);
+    }
+}
