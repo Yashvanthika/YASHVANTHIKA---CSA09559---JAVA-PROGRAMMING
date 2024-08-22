@@ -1,0 +1,23 @@
+private String setName() 
+{
+    Scanner scanner = new Scanner(System.in);
+    String name;
+    String namePattern = "^[a-zA-Z]+\\s+[a-zA-Z]+$"; 
+    do
+    {
+        System.out.println("Enter your full name (first and last name separated by a space):");
+        name = scanner.nextLine();
+        if (!name.matches(namePattern)) 
+        {
+            System.out.println("Incorrect format for name. Please enter your first and last name separated by a space.");
+            continue;
+        }
+        int count = countChars(name, ' ');
+        if (count != 1) 
+        {
+            System.out.println("Please enter only a first name and a last name.");
+        }
+    }
+    while (!name.matches(namePattern)); 
+    return name;
+}
