@@ -1,0 +1,29 @@
+public class RegexMatchDemo 
+{
+    public static void main(String[] args) 
+{
+        String str1_1 = "anana";
+        String str1_2 = "banana";
+        String str1_3 = "gabanana";
+        
+        System.out.println(str1_1 + " matches .?anana: " + str1_1.matches(".?anana"));
+        System.out.println(str1_2 + " matches .?anana: " + str1_2.matches(".?anana"));
+        System.out.println(str1_3 + " matches .?anana: " + str1_3.matches(".?anana"));
+
+        String str2_1 = "banana";
+        String str2_2 = "anana";
+        String str2_3 = "shanana";
+        
+        System.out.println(str2_1 + " matches [Bb]anana: " + str2_1.matches("[Bb]anana"));
+        System.out.println(str2_2 + " matches [Bb]anana: " + str2_2.matches("[Bb]anana"));
+        System.out.println(str2_3 + " matches [Bb]anana: " + str2_3.matches("[Bb]anana"));
+
+        String str3_1 = "montanana";
+        String str3_2 = "anana";
+        String str3_3 = "_anana";
+        
+        System.out.println(str3_1 + " matches .*anana: " + str3_1.matches(".*anana"));
+        System.out.println(str3_2 + " matches .*anana: " + str3_2.matches(".*anana"));
+        System.out.println(str3_3 + " matches .*anana: " + str3_3.matches(".*anana"));
+    }
+}
