@@ -1,0 +1,14 @@
+package Pathtest;
+
+import java.nio.file.FileSystems;
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
+public class Pathtest 
+{
+    public static void main(String[] args) 
+    {
+        FileSystem fileSystem = FileSystems.getDefault();
+        Path path = fileSystem.getPath("C:/JavaProgramming", "IO/Logs");
+        System.out.println("Constructed Path: " + path.toString());
+    }
+}
