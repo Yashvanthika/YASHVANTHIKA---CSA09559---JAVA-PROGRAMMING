@@ -1,0 +1,19 @@
+public class AnswerKeyProcessor 
+{
+
+    public static String finalAnswers(String answers) 
+{
+        answers = answers.replace('e', 'b')
+                         .replace('E', 'A')
+                         .replace('f', 'c')
+                         .replace('F', 'D');
+        answers = answers.toLowerCase();        
+        return answers;
+    }
+    public static void main(String[] args) 
+{
+        String answers = "aEbFcD"; 
+        String finalAnswerKey = finalAnswers(answers);
+        System.out.println(finalAnswerKey); 
+    }
+}
