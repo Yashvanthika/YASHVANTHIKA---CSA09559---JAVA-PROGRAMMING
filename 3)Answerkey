@@ -1,0 +1,22 @@
+mport java.util.regex.*;
+import java.io.*;
+public class AnswerKeyProblem 
+{
+    public static void main(String args[]) throws IOException 
+    {
+        BufferedReader codedAnswers = new BufferedReader(new FileReader("CodedAnswerKey"));
+        String line = codedAnswers.readLine();
+        String answers = "";
+        String answerPattern = "[a-fA-F]";
+        while (line != null) 
+        {
+            if (line.matches(answerPattern)) 
+            {
+                answers += line;
+            }
+            line = codedAnswers.readLine();
+        }
+        codedAnswers.close();
+        System.out.println(answers);
+    }
+}
